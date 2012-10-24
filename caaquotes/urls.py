@@ -1,3 +1,4 @@
+from caaquotes.quotes import views
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -5,6 +6,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', views.ListQuotes.as_view(), name='quotes'),
     # Examples:
     # url(r'^$', 'caaquotes.views.home', name='home'),
     # url(r'^caaquotes/', include('caaquotes.foo.urls')),
