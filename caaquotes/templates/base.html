@@ -11,8 +11,8 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <a class="brand" href="{% url quotes %}">#CAA Quotes</a>
-                    <form class="navbar-search pull-right">
-                        <input type="text" class="search-query" placeholder="Search">
+                    <form class="navbar-search pull-right" method="get" action="{% url quote_search %}">
+                        <input name="query" type="text" class="search-query" placeholder="Search">
                     </form>
                 </div>
             </div>

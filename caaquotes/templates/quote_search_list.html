@@ -1,0 +1,8 @@
+{% extends "quote_list.html" %}
+
+{% block content %}
+<div class="page-header">
+    <h3>Searching for: "{{ search_query }}"</h3>
+</div>
+{{ block.super }}
+{% endblock %}

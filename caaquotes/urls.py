@@ -8,6 +8,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     url(r'^quotes/$', views.ListQuotes.as_view(), name='quotes'),
     url(r'^quotes/(?P<pk>\d+)/$', views.QuoteDetail.as_view(), name='quote'),
+    url(r'^quotes/search/$', views.QuoteSearch.as_view(), name='quote_search'),
     # Examples:
     # url(r'^$', 'caaquotes.views.home', name='home'),
     # url(r'^caaquotes/', include('caaquotes.foo.urls')),
