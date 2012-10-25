@@ -6,7 +6,8 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', views.ListQuotes.as_view(), name='quotes'),
+    url(r'^quotes/$', views.ListQuotes.as_view(), name='quotes'),
+    url(r'^quotes/(?P<pk>\d+)/$', views.QuoteDetail.as_view(), name='quote'),
     # Examples:
     # url(r'^$', 'caaquotes.views.home', name='home'),
     # url(r'^caaquotes/', include('caaquotes.foo.urls')),
