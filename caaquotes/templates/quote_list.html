@@ -3,16 +3,16 @@
 {% block title %}#CAA Quotes{% endblock %}
 
 {% block content %}
-        <div class="container">
             {% for quote in object_list %}
             <div class="row-fluid">
                 <div class="span12">
                     <blockquote>
-                        <p>{{ quote.quote }}</p>
+                        <p>{% for line in quote.lines %}
+                        {{ line }}<br />
+                        {% endfor %}</p>
                         <small>Quote <cite title="Quote ID">#{{ quote.id }}</cite></small>
                     </blockquote>
                 </div>
             </div>
             {% endfor %}
-        </div>
 {% endblock %}
