@@ -1,0 +1,9 @@
+<div class="pagination pagination-centered">
+    <p>Current Page: {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+    <ul>
+        {% for page in paginator.page_range %}
+        <li{% if page_obj.number == page %} class="active"{% endif %}><a href="?page={{ page }}">{{ page }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+

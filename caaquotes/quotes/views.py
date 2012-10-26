@@ -4,6 +4,7 @@ from django.views.generic import DetailView, ListView
 class ListQuotes(ListView):
     queryset = Quote.objects.all()
     template_name = 'quote_list.html'
+    paginate_by = 50
 
 class QuoteDetail(DetailView):
     queryset = Quote.objects.all()
@@ -11,6 +12,7 @@ class QuoteDetail(DetailView):
 
 class QuoteSearch(ListView):
     template_name = 'quote_search_list.html'
+    paginate_by = 50
 
     def get_queryset(self):
         search_query = self.request.GET.get('query', None)
