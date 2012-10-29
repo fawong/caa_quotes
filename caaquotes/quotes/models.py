@@ -63,4 +63,4 @@ class Quote(models.Model):
 
     class Meta:
         db_table = 'quotes'
-        ordering = ['id']
+        ordering = ['-id']
