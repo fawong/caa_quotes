@@ -1,5 +1,6 @@
 from caaquotes.quotes.models import Quote
 from django.views.generic import DetailView, ListView
+from stemming.lovins import stem
 
 class ListQuotes(ListView):
     queryset = Quote.objects.all()
@@ -15,11 +16,21 @@ class QuoteSearch(ListView):
     paginate_by = 50
 
     def get_queryset(self):
+        def safe_stem(word):
+            try:
+                return stem(word)
+            except Exception as e:
+                return word
+
         search_query = self.request.GET.get('query', None)
         if not search_query:
             return []
 
-        return Quote.objects.filter(quote__contains=search_query)
+        stemmed_words = [safe_stem(word) for word in search_query.split(" ")]
+        query = Quote.objects.all()
+        for word in stemmed_words:
+            query = query.filter(quote__icontains=word)
+        return query
 
     def get_context_data(self, **kwargs):
         context = super(QuoteSearch, self).get_context_data(**kwargs)
