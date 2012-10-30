@@ -6,6 +6,8 @@ setup(name='caa-quotes',
       author_email="kedo@ocf.berkeley.edu",
       packages=['caaquotes',
                 'caaquotes.quotes'],
+      install_requires=['Django',
+                        'stemming'],
       data_files=[],
       version='1.0.0',
       long_description="""
