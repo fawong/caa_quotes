@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" />
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="margin-bottom: 60px;">
             <div class="navbar">
                 <div class="navbar-inner">
                     <a class="brand" href="{% url quotes %}">#CAA Quotes</a>
@@ -19,5 +19,7 @@
 {% block content %}
 {% endblock %}
         </div>
+{% block postcontent %}
+{% endblock %}
     </body>
 </html>
