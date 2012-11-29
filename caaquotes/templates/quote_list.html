@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load quotes_extras %}
 {% block title %}#CAA Quotes{% endblock %}
 
 {% block content %}
@@ -8,7 +8,7 @@
                 <div class="span12">
                     <blockquote>
                         <p>{% for line in quote.lines %}
-                        {{ line }}<br />
+                        {{ line|irc_format }}<br />
                         {% endfor %}</p>
                         <small><a href="{% url quote quote.id %}">Quote <cite title="Quote ID">#{{ quote.id }}</cite></a></small>
                     </blockquote>
