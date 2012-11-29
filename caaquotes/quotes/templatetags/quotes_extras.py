@@ -58,9 +58,11 @@ def generate_span(state):
         classes.append('irc-bold')
     if state.underline:
         classes.append('irc-underline')
-    if state.fg_color is not None:
+
+    # we don't display colors higher than 15
+    if state.fg_color is not None and state.fg_color < 16:
         classes.append("irc-fg-%s" % state.fg_color)
-    if state.bg_color is not None:
+    if state.bg_color is not None and state.fg_color < 16:
         classes.append("irc-bg-%s" % state.bg_color)
     return "<span class=\"%s\">" % ' '.join(classes)
 
