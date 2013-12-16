@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-CHANNEL = 'OCF'
+CHANNEL = 'CAA'
 
 DATABASES = {
     'default': {
