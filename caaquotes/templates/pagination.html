@@ -1,10 +1,8 @@
-<div class="pagination pagination-centered" style="position: fixed; bottom: 0; width: 100%; color: #FFF; margin: 0;">
-    <div style="background: #000; opacity: .75;">
-        <p>Current Page: {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
-        <ul>
-            {% for page in paginator.page_range %}
+<div id="footer">
+    <p style="color: #FFFFFF;">Current Page: {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+        <ul class="pagination">
+        {% for page in paginator.page_range %}
             <li{% if page_obj.number == page %} class="active"{% endif %}><a href="?page={{ page }}">{{ page }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+        {% endfor %}
+    </ul>
 </div>
