@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block title %}#CAA Quotes{% endblock %}</title>
+        <title>{% block title %}#{{ CHANNEL }} Quotes{% endblock %}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
-        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
         <style type="text/css">
             .irc-bold{font-weight: bold;}
 
@@ -49,7 +48,7 @@
         <div class="container" style="margin-bottom: 60px;">
             <div class="navbar">
                 <div class="navbar-inner">
-                    <a class="brand" href="{% url quotes %}">#CAA Quotes</a>
+                    <a class="brand" href="{% url quotes %}">#{{ CHANNEL }} Quotes</a>
                     <form class="navbar-search pull-right" method="get" action="{% url quote_search %}">
                         <input name="query" type="text" class="search-query" placeholder="Search">
                     </form>

@@ -2,8 +2,8 @@
 
 ## Installation Instructions
 1.  Checkout the repo to a non-public directory
-1.  Create a .fcgi script (or other script) so that Apache (or whatever webserver)
-1.  Create a .htaccess file (or equivalent host configuration) so that all requests for "/quotes/.*" get sent to that .fcgi script
+1.  Copy quotes.fcgi-default to quotes.fcgi so that Apache (or whatever webserver) can serve up the page
+1.  Copy the .htaccess-default to .htaccess (or equivalent host configuration) so that all requests for "/.*" get sent to that .fcgi script
 1.  In the checked out directory, copy settings.py-default to settings.py, and then edit:
     *  the ENGINE under the 'default' database
     *  the NAME under the 'default' database
