@@ -48,8 +48,8 @@
         <div class="container" style="margin-bottom: 60px;">
             <div class="navbar">
                 <div class="navbar-inner">
-                    <a class="brand" href="{% url quotes %}">#{{ CHANNEL }} Quotes</a>
-                    <form class="navbar-search pull-right" method="get" action="{% url quote_search %}">
+                    <a class="brand" href="{% url 'quotes' %}">#{{ CHANNEL }} Quotes</a>
+                    <form class="navbar-search pull-right" method="get" action="{% url 'quote_search' %}">
                         <input name="query" type="text" class="search-query" placeholder="Search">
                     </form>
                 </div>
